@@ -1,0 +1,29 @@
+.img {
+    position: relative; /* Required for the overlay to position correctly */
+    background: url("../images/business-people-sitting-in-minivan-taxi-2023-11-27-04-59-02-utc-scaled.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh; /* Set the height of the container */
+}
+
+/* Overlay using ::before pseudo-element */
+.img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Places the overlay above the background */
+}
+
+/* Content inside .img */
+.img-content {
+    position: relative; /* To position the content above the overlay */
+    z-index: 2; /* Ensures content appears above the overlay */
+    color: white; /* White text for better visibility on dark overlay */
+    
+    padding: 20px;
+}
